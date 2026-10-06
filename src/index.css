@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+html, body, #root {
+  margin: 0;
+  min-height: 100%;
+  min-height: 100vh;
+}
+
+body {
+  background: #0b132b;
+  color: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button, textarea, input, select {
+  font: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.35);
+  border-radius: 999px;
+}
+
+button {
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+textarea, input, select {
+  outline: none;
+}
+
+.card {
+  @apply rounded-2xl border border-white/10 bg-slate-900/60 shadow-lg backdrop-blur-sm;
+}
+
+.panel {
+  @apply rounded-2xl border border-white/10 bg-slate-950/60;
+}
+
+.glow {
+  box-shadow: 0 0 22px rgba(76, 201, 240, 0.25);
+}
+
+.font-mono-sans {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+}
+
+.font-sans-ui {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-serif-edu {
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.theme-gchq {
+  --bg: #0b132b;
+  --panel: rgba(28, 37, 65, 0.92);
+  --panel-strong: rgba(15, 23, 42, 0.92);
+  --primary: #4cc9f0;
+  --secondary: #1c2541;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --accent: #7dd3fc;
+  --success: #22c55e;
+}
+
+.theme-matrix {
+  --bg: #020b07;
+  --panel: rgba(11, 23, 17, 0.92);
+  --panel-strong: rgba(3, 7, 5, 0.96);
+  --primary: #00ff66;
+  --secondary: #0b1a10;
+  --text: #d6ffe8;
+  --muted: #7ef7b5;
+  --accent: #7cffae;
+  --success: #00ff66;
+}
+
+.theme-parchment {
+  --bg: #f4ead7;
+  --panel: rgba(232, 217, 194, 0.9);
+  --panel-strong: rgba(255, 250, 244, 0.96);
+  --primary: #8a5c3b;
+  --secondary: #d9c4a1;
+  --text: #1d120d;
+  --muted: #704d3a;
+  --accent: #b57d52;
+  --success: #2ca167;
+}
+
+.theme-midnight {
+  --bg: #0f172a;
+  --panel: rgba(15, 23, 42, 0.92);
+  --panel-strong: rgba(17, 24, 39, 0.96);
+  --primary: #22d3ee;
+  --secondary: #0f172a;
+  --text: #dbeafe;
+  --muted: #a5b4fc;
+  --accent: #c084fc;
+  --success: #34d399;
+}
+
+.theme-academic {
+  --bg: #f5f7f9;
+  --panel: rgba(255, 255, 255, 0.9);
+  --panel-strong: rgba(248, 250, 252, 0.98);
+  --primary: #2563eb;
+  --secondary: #e2e8f0;
+  --text: #0f172a;
+  --muted: #475569;
+  --accent: #1d4ed8;
+  --success: #15803d;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app-shell .card,
+.app-shell .panel {
+  background: var(--panel);
+  color: var(--text);
+}
+
+.meter-fill {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+
+.topbar {
+  background: rgba(15, 23, 42, 0.7);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+input[type='range'] {
+  accent-color: var(--primary);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.bar-chart {
+  display: flex;
+  align-items: end;
+  gap: 4px;
+  height: 180px;
+}
+
+.bar-chart .bar {
+  flex: 1;
+  min-height: 8px;
+  border-radius: 8px 8px 0 0;
+  background: linear-gradient(180deg, var(--primary), var(--accent));
+}
+
+.canvas-wrap {
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(15, 23, 42, 0.7);
+}
+
+.canvas-wrap canvas {
+  display: block;
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+}
+
+.bitplane-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.bitplane-card {
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: 14px;
+  padding: 8px;
+}
+
+.bitplane-card canvas {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.word-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(76, 201, 240, 0.12);
+  color: var(--primary);
+  border: 1px solid rgba(76, 201, 240, 0.2);
+}
+
+@media (max-width: 768px) {
+  .bitplane-grid {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+  }
+}
